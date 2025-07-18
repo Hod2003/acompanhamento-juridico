@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acompanhamento Jurídico - Rastreamento de Processo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <i class="fas fa-balance-scale"></i>
+                <h1>Acompanhamento Jurídico</h1>
+                <p>Acompanhe o andamento do seu processo em tempo real</p>
+            </div>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="clienteInput" placeholder="Digite o nome completo do cliente para consultar">
+                <button id="buscarBtn">Buscar</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Buscando informações...</p>
+        </div>
+
+        <div id="error" class="error-message hidden">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p>Cliente não encontrado ou erro na consulta. Verifique o nome e tente novamente.</p>
+        </div>
+
+        <div id="resultado" class="resultado hidden">
+            <div class="client-info">
+                <div class="info-header">
+                    <i class="fas fa-user"></i>
+                    <h2 id="nomeCliente"></h2>
+                </div>
+                <div class="info-details">
+                    <div class="detail-item">
+                        <span class="label">Parte Reclamada:</span>
+                        <span id="parteReclamada"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Última Atualização:</span>
+                        <span id="ultimaAtualizacao"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-container">
+                <h3>Andamento do Processo</h3>
+                <div class="timeline" id="timeline">
+                    <!-- Etapas serão inseridas dinamicamente -->
+                </div>
+            </div>
+
+            <div class="observacoes-container" id="observacoesContainer">
+                <h3>Observações</h3>
+                <div class="observacoes" id="observacoes">
+                    <!-- Observações serão inseridas dinamicamente -->
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2025 Sistema de Acompanhamento Jurídico. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
